@@ -5,10 +5,11 @@ import { queryClientInstance } from '@/lib/query-client'
 import VisualEditAgent from '@/lib/VisualEditAgent'
 import NavigationTracker from '@/lib/NavigationTracker'
 import { pagesConfig } from './pages.config'
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
+import { useLocation } from 'react-router-dom';
 
 const { Pages, Layout, mainPage } = pagesConfig;
 const mainPageKey = mainPage ?? Object.keys(Pages)[0];
@@ -17,7 +18,6 @@ const MainPage = mainPageKey ? Pages[mainPageKey] : <></>;
 const LayoutWrapper = ({ children, currentPageName }) => Layout ?
   <Layout currentPageName={currentPageName}>{children}</Layout>
   : <>{children}</>;
-
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -32,7 +32,7 @@ const AuthenticatedApp = () => {
     );
   }
 
-  const publicRoutes = ['/', '/Landing', '/login', '/Login', '/Privacy', '/Terms', '/CommunityGuidelines', '/NotFound', '/Waitlist', '/AmbassadorApply'];
+  const publicRoutes = ['/', '/Landing', '/Privacy', '/Terms', '/CommunityGuidelines', '/NotFound', '/Waitlist', '/AmbassadorApply'];
   const isPublicRoute = publicRoutes.includes(location.pathname);
 
   // Handle authentication errors
