@@ -32,7 +32,7 @@ const AuthenticatedApp = () => {
     );
   }
 
-  const publicRoutes = ['/', '/Landing', '/Privacy', '/Terms', '/CommunityGuidelines', '/NotFound', '/Waitlist', '/AmbassadorApply'];
+  const publicRoutes = ['/', '/Landing', '/login', '/Login', '/Privacy', '/Terms', '/CommunityGuidelines', '/NotFound', '/Waitlist', '/AmbassadorApply'];
   const isPublicRoute = publicRoutes.includes(location.pathname);
 
   // Handle authentication errors

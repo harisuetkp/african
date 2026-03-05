@@ -86,6 +86,7 @@ import Home from './pages/Home';
 import IDVerification from './pages/IDVerification';
 import InvestorReport from './pages/InvestorReport';
 import Landing from './pages/Landing';
+import Login from './pages/Login';
 import LanguageExchangeHub from './pages/LanguageExchangeHub';
 import LegalAcceptance from './pages/LegalAcceptance';
 import Marketplace from './pages/Marketplace';
@@ -165,6 +166,7 @@ export const PAGES = {
     "IDVerification": IDVerification,
     "InvestorReport": InvestorReport,
     "Landing": Landing,
+    "login": Login,
     "LanguageExchangeHub": LanguageExchangeHub,
     "LegalAcceptance": LegalAcceptance,
     "Marketplace": Marketplace,
