@@ -204,7 +204,7 @@ export const PAGES = {
 }
 
 export const pagesConfig = {
-    mainPage: "Landing",
+    mainPage: "AdminDashboard",
     Pages: PAGES,
     Layout: __Layout,
 };
